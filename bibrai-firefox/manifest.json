@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "BIBRAI Converter",
+  "version": "1.1",
+  "description": "Encode et décode du texte avec le protocole BIBRAI.",
+  "permissions": ["contextMenus", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
