@@ -48,7 +48,18 @@ Sur notre phrase de test : *"Le chat est dans la maison pour le repas. Il est co
 *Dans un scénario de communication d'urgence, ce gain de 30 à 50 % représente la différence entre un message qui passe ou qui est perdu.*
 
 ---
+## 🦊 Extension Firefox (Mode Clic Droit)
 
+Le dossier `bibrai-firefox/` contient une extension prête à l'emploi.
+Elle permet d'encoder ou de décoder du texte directement sur n'importe quelle page web via le menu contextuel (clic droit).
+
+**Installation :**
+1. Tapez `about:debugging` dans la barre d'adresse de Firefox.
+2. Cliquez sur "Ce Firefox" > "Charger un module temporaire...".
+3. Sélectionnez le fichier `manifest.json` dans le dossier `bibrai-firefox/`.
+4. Sélectionnez du texte sur une page web, faites un clic droit et choisissez "Encoder en BIBRAI".
+
+---
 ## 🛠️ Utilisation & Test
 
 Le prototype actuel est écrit en **Python 3** (sans aucune dépendance externe) pour démontrer la viabilité du concept.
