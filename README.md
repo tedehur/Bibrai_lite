@@ -1,7 +1,8 @@
+
 # 🌐 BIBRAI - Le protocole de communication des réseaux extrêmes
 
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
-![Version](https://img.shields.io/badge/Version-1.0-blue)
+![Version](https://img.shields.io/badge/Version-1.1-blue)
 ![Language](https://img.shields.io/badge/Language-Python_3-yellow)
 ![License](https://img.shields.io/badge/License-MIT-orange)
 
