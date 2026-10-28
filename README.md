@@ -1,7 +1,7 @@
 # 🌐 BIBRAI - Le protocole de communication des réseaux extrêmes
 
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
-![Version](https://img.shields.io/badge/Version-1.0_%28Lite%29-blue)
+![Version](https://img.shields.io/badge/Version-1.0-blue)
 ![Language](https://img.shields.io/badge/Language-Python_3-yellow)
 ![License](https://img.shields.io/badge/License-MIT-orange)
 
@@ -11,14 +11,31 @@ Face à l'inefficacité des encodages classiques comme l'ASCII ou l'UTF-8 (qui a
 
 ---
 
-## 🚀 Le Concept : BIBRAI Lite
+## 🛡️ Les 3 Profils BIBRAI
 
-La première version du protocole, **BIBRAI Lite**, repose sur deux piliers fondamentaux :
+Le protocole s'adapte à votre situation. Trois modes sont disponibles dans ce dépôt :
 
-1. **L'élimination des espaces inutiles :** Les espaces sont supprimés pour alléger le flux. La structure des mots est déduite logiquement par le décodeur.
-2. **Le Dictionnaire Statique Universel :** Les 64 mots les plus fréquents (en français et en anglais) sont "gravés" dans une table de correspondance commune au client et au serveur. Un mot comme "pour" n'est plus envoyé sous forme de 4 lettres (4 octets), mais sous forme d'un seul code binaire (1 octet).
+### 1. 🚀 BIBRAI Lite (`bibrai_lite.py`)
+**Le mode standard.** C'est le meilleur compromis pour un usage quotidien sur un réseau faible.
+*   **Fonctionnement :** Compression par dictionnaire + gestion intelligente des espaces.
+*   **Gain de bande passante :** ~32 %.
+*   **Cas d'usage :** Bureautique, messagerie classique sur réseau instable.
 
-### 📊 Preuve par les chiffres
+### 2. 🆘 BIBRAI Ultra-Light (`bibrai_ultra_light.py`)
+**Le mode survie absolue.** À utiliser quand le réseau est au bord de la rupture (catastrophe, hertzien saturé).
+*   **Fonctionnement :** Compression maximale. **Zéro espace transmis**. Les mots peuvent être collés à la réception, mais l'humain peut lire le message.
+*   **Gain de bande passante :** ~40 à 50 %.
+*   **Cas d'usage :** SOS, transmission de coordonnées critiques, télémétrie d'urgence.
+
+### 3. 🔒 BIBRAI Secure (`bibrai_secure.py`)
+**Le mode tactique.** Pour les équipes de secours et de sécurité qui ont besoin de confidentialité.
+*   **Fonctionnement :** Compression + Parité (détection d'erreurs réseau) + Chiffrement XOR (clé secrète).
+*   **Gain de bande passante :** ~25 % (le coût de la sécurité).
+*   **Cas d'usage :** Communications militaires, secours sensibles, transfert de données médicales.
+
+---
+
+## 📊 Preuve par les chiffres (BIBRAI Lite)
 
 Sur notre phrase de test : *"Le chat est dans la maison pour le repas. Il est content !"*
 
@@ -27,7 +44,7 @@ Sur notre phrase de test : *"Le chat est dans la maison pour le repas. Il est co
 | **UTF-8 Classique** | 58 octets | - |
 | **BIBRAI Lite** | 39 octets | **🚀 -32,76 %** |
 
-*Dans un scénario de communication d'urgence ou sur un réseau hertzien saturé, ce gain de 30 à 50 % représente la différence entre un message qui passe ou qui est perdu.*
+*Dans un scénario de communication d'urgence, ce gain de 30 à 50 % représente la différence entre un message qui passe ou qui est perdu.*
 
 ---
 
@@ -36,7 +53,9 @@ Sur notre phrase de test : *"Le chat est dans la maison pour le repas. Il est co
 Le prototype actuel est écrit en **Python 3** (sans aucune dépendance externe) pour démontrer la viabilité du concept.
 
 1. Clonez ce dépôt.
-2. Lancez le script de démonstration :
+2. Lancez le script de démonstration du mode qui vous intéresse :
 
 ```bash
 python3 bibrai_lite.py
+python3 bibrai_ultra_light.py
+python3 bibrai_secure.py
