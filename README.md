@@ -60,6 +60,11 @@ Elle permet d'encoder ou de décoder du texte directement sur n'importe quelle p
 4. Sélectionnez du texte sur une page web, faites un clic droit et choisissez "Encoder en BIBRAI".
 
 ---
+## 💻 Lib C++ pour Embarqué (ESP32 / LilyGo)
+
+Un portage natif en C++ est disponible dans le fichier `bibrai.cpp`. Il utilise la bibliothèque standard et est conçu pour être facilement adaptable aux microcontrôleurs (comme l'ESP32 des cartes LilyGo) fonctionnant sous l'IDE Arduino.
+
+Cette version est optimisée pour la gestion de la mémoire limitée et se destine aux communications radio à très faible bande passante (LoRa, BLE Mesh) pour les réseaux de secours.
 ## 🛠️ Utilisation & Test
 
 Le prototype actuel est écrit en **Python 3** (sans aucune dépendance externe) pour démontrer la viabilité du concept.
@@ -71,3 +76,5 @@ Le prototype actuel est écrit en **Python 3** (sans aucune dépendance externe)
 python3 bibrai_lite.py
 python3 bibrai_ultra_light.py
 python3 bibrai_secure.py
+- [x] **Librairie C++** : Portage pour les systèmes embarqués (ESP32).
+- [ ] **Intégration LilyGo** : Adaptation pour l'IDE Arduino et test sur puce LoRa/BLE.
